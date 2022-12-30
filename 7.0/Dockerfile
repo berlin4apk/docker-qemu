@@ -56,6 +56,7 @@ RUN set -eux; \
 		\
 		patch \
 		\
+		upx-ucl \
 		bzip2 \
 		gcc \
 		gnutls-dev \
@@ -169,6 +170,8 @@ RUN set -eux; \
 	\
 	cd /; \
 	rm -rf /usr/src/qemu; \
+	\
+	upx -v --preserve-build-id --lzma /usr/local/bin/*; \
 	\
 	apt-mark auto '.*' > /dev/null; \
 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; \
