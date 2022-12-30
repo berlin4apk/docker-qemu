@@ -192,6 +192,8 @@ RUN set -eux; \
 		--enable-numa \
 		--enable-rbd \
 		--enable-seccomp \
+# striping reduce it form ~147MB to ~30MB
+		--enable-strip \
 		--enable-tools \
 		--enable-usb-redir \
 		--enable-vhost-net \
